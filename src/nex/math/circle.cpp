@@ -36,4 +36,11 @@ bool Circle::intersects(const vec2f& center, const real32 radius, const rectf& r
     return distanceSquared < (radius * radius);
 }
 
+bool Circle::intersects(const vec2f& circleA, const real32 radiusA, const vec2f& circleB, const real32 radiusB)
+{
+     const vec2f delta = (circleB - circleA) * (circleB - circleA);
+     const real32 radiusSq  = (radiusA + radiusB) * (radiusA + radiusB);
+     return radiusSq >= (delta.x + delta.y);
+}
+
 } // namespace nx
