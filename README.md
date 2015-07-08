@@ -5,8 +5,8 @@ A utility library for games and applications with heavy use of vectors and OpenG
 
 ## Dependencies
 
-- Freetype 2.6 or higher
-- Glew 1.11.0 or higher
+- Freetype >= 2.6
+- Glew >= 1.11.0
 
 ## TODO
 
