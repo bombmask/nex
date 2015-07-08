@@ -42,6 +42,16 @@ public:
     static bool intersects(const vec2f& center, const real32 radius, const rectf& rect);
 
     /**
+     * @brief Check if two circles are intersecting.
+     * @param circleA = The center point of the first circle.
+     * @param radiusA = The radius of the first circle.
+     * @param circleB = The center point of the second circle.
+     * @param radiusB = The radius of the second tool.
+     * @return true if the circles intersect.
+     */
+    static bool intersects(const vec2f& circleA, const real32 radiusA, const vec2f& circleB, const real32 radiusB);
+
+    /**
      * @brief The radius of the circle.
      */
     real32 radius;
