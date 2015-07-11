@@ -2,6 +2,8 @@ build/
 Build/
 data/
 Data/
+debug/
+release/
 
 # External libs (To be submoduled)
 extlib/freetype
