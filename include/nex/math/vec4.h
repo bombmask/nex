@@ -41,7 +41,7 @@ public:
     explicit Vec4(const Vec4<U>& vector);
 
     //Vector copy.
-    T& operator=(const T& lhs) & {
+    T& operator=(const T& lhs) {
         x = lhs.x;
         y = lhs.y;
         z = lhs.z;

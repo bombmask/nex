@@ -36,7 +36,9 @@ if (APPLE)
 elseif (UNIX)
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++11")
 elseif (WIN32)
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++11")
+	if (MINGW)
+		set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++11")
+	endif()
 endif(APPLE)
 
 # Build static stdlibs on GCC and MingW
@@ -50,6 +52,7 @@ set (EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 set (NEX_EXTLIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/extlib)
 set (NEX_STB_IMAGE_INCLUDE ${NEX_EXTLIB_DIR}/stb_image)
 set (NEX_FREETYPE_INCLUDE ${NEX_EXTLIB_DIR}/freetype/include)
+set (NEX_GLEW_INCLUDE ${NEX_EXTLIB_DIR}/glew/include)
 
 # Include external library headers.
 set (NEX_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
@@ -72,4 +75,4 @@ add_subdirectory (${NEX_EXTLIB_DIR}/freetype)
 add_subdirectory (src/nex)
 
 # Enable this to build the nex test project.
-# add_subdirectory (src/testing)
+add_subdirectory (src/testing)

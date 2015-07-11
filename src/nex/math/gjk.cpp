@@ -9,6 +9,24 @@ GJK::GJK() :
     mMaxLengthSq(0),
     mClosestPoint(vec3f())
 {
+    // Setup our bit conversion indices.
+    mBitsToIndices[0] = 0;
+    mBitsToIndices[1] = 1;
+    mBitsToIndices[2] = 2;
+    mBitsToIndices[3] = 17;
+    mBitsToIndices[4] = 3;
+    mBitsToIndices[5] = 25;
+    mBitsToIndices[6] = 26;
+    mBitsToIndices[7] = 209;
+    mBitsToIndices[8] = 4;
+    mBitsToIndices[9] = 33;
+    mBitsToIndices[10] = 34;
+    mBitsToIndices[11] = 273;
+    mBitsToIndices[12] = 35;
+    mBitsToIndices[13] = 281;
+    mBitsToIndices[14] = 282;
+    mBitsToIndices[15] = 2257;
+
     for (int i = 0; i < 4; i++) {
         mYLengthSq[i] = 0;
         for (int j = 0; j < 4; j++) {

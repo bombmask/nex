@@ -12,7 +12,7 @@ namespace nx
 
 std::string Path::getDirectoryName(const std::string& path)
 {
-    char buffer[path.size()];
+    char buffer[4096];
 
     memcpy(buffer, path.c_str(), path.size());
 

@@ -41,7 +41,7 @@ public:
     template <typename U>
     explicit Vec2(const Vec2<U>& vector);
 
-    T& operator=(const T& lhs) & {
+    T& operator=(const T& lhs) {
         x = lhs.x;
         y = lhs.y;
         return *this;

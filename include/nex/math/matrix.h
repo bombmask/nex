@@ -77,7 +77,7 @@ public:
            const T m14, const T m24, const T m34, const T m44);
 
     //Matrix copy.
-    Matrix<T>& operator=(const Matrix<T>& lhs) & {
+    Matrix<T>& operator=(const Matrix<T>& lhs) {
 
         m[0][0] = lhs[0][0];
         m[0][1] = lhs[0][1];

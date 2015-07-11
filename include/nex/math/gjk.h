@@ -39,25 +39,7 @@ private:
 
     float mDet[16][4];
 
-    int mBitsToIndices[16] =
-    {
-        0,
-        1,
-        2,
-        17,
-        3,
-        25,
-        26,
-        209,
-        4,
-        33,
-        34,
-        273,
-        35,
-        281,
-        282,
-        2257
-    };
+    int mBitsToIndices[16];
 
     void updateDeterminant(int xmIdx);
     bool updateSimplex(int newIndex);

@@ -1,8 +1,10 @@
 #ifndef FILE_H_INCLUDE
 #define FILE_H_INCLUDE
 
+// Project includes.
 #include <nex/system/typedefs.h>
 
+// Standard includes.
 #include <string>
 
 namespace nx
