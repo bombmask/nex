@@ -1,12 +1,16 @@
 language: cpp
-sudo: required
+
+addons:
+  apt:
+    packages:
+    - cmake
+    - glew-utils 
+    - libglew-dev  
 
 compiler:
     - gcc
 
 before_script:
-    - sudo apt-get install glew-utils 
-    - sudo apt-get install libglew-dev 
     - mkdir build
     - cd build
     - cmake ..
