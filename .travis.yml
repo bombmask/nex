@@ -4,6 +4,8 @@ compiler:
     - gcc
 
 before_script:
+    - apt-get install glew-utils 
+    - apt-get install libglew-dev 
     - mkdir build
     - cd build
     - cmake ..

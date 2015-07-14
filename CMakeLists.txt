@@ -51,10 +51,7 @@ set (EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 # Setup some base path variables.
 set (NEX_EXTLIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/extlib)
 set (NEX_STB_IMAGE_INCLUDE ${NEX_EXTLIB_DIR}/stb_image)
-set (NEX_FREETYPE_INCLUDE ${NEX_EXTLIB_DIR}/freetype/include)
-set (NEX_GLEW_INCLUDE ${NEX_EXTLIB_DIR}/glew/include)
 
-# Include external library headers.
 set (NEX_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set (NEX_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
@@ -67,9 +64,17 @@ set (NEX_WINDOW_LIB nex-window)
 set (NEX_GAME_LIB nex-game)
 set (NEX_GFX_LIB nex-gfx)
 
-# Add the external library builds.
+# Add the external libraries.
+find_package(Freetype REQUIRED)
+if (FREETYPE_FOUND)
+    include_directories(${FREETYPE_INCLUDE_DIRS})
+    set (NEX_FREETYPE_INCLUDE ${FREETYPE_INCLUDE_DIRS})
+endif()
 
-add_subdirectory (${NEX_EXTLIB_DIR}/freetype)
+find_package(GLEW REQUIRED)
+if (GLEW_FOUND)
+    set (NEX_GLEW_INCLUDE ${GLEW_INCLUDE_DIRS})
+endif()
 
 # Add our library folder.
 add_subdirectory (src/nex)
