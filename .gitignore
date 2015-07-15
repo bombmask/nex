@@ -5,8 +5,8 @@ Data/
 debug/
 release/
 
-# External libs (To be submoduled)
-extlib/freetype
-extlib/glew
+# External libs (To be submoduled) Done
+#extlib/freetype
+#extlib/glew
 
 CMakeLists.txt.user
